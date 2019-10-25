@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-
+import { nbsp} from "../index";
 export class ListarActores extends Component {
 	state = {
 		actores: []
@@ -22,9 +22,9 @@ export class ListarActores extends Component {
 						<div key={i} style={{ float: 'left', width: '25%'}}>
 							{/* llamamos al componentes EditarClientes con la id */}
 							<Link to={`/actor/${cli.actor_id}`}> {cli.first_name} </Link>
-							&nbsp;&nbsp;&nbsp;&nbsp;
+						   { nbsp(10)}
 							{cli.last_name}
-							&nbsp;&nbsp;&nbsp;&nbsp;
+							{ nbsp(10)} 
 						</div>
 					);
 				})}

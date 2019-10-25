@@ -25,7 +25,7 @@ export function br(n) {
 
 const rutas = (
   <BrowserRouter>
-    <Route path="/" component={ListarActores} />
+    <Route exact path="/" component={ListarActores} />
     <Route path="/actor/:id" component={EditarActor} />
     <Route path="/test2" component={Test2} />
   </BrowserRouter>

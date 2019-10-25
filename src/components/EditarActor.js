@@ -87,7 +87,7 @@ export class EditarActor extends Component {
           Borrar
         </button>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <Link to="/test1">listado</Link>
+        <Link to="/">listado</Link>
       </div>
     );
   }
