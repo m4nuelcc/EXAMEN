@@ -1,12 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route } from "react-router-dom";
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import {ListarActores, Test2} from "./components/ListadoActores"
+import {EditarActor} from "./components/EditarActor"
 
-ReactDOM.render(<App />, document.getElementById('root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+
+export function nbsp(n) {
+  let ret = []
+  for (let index = 1; index <= n; index++) {
+    ret.push(<span key={index}>&nbsp;</span>);    
+  }
+  return ret
+}
+export function br(n) {
+  let ret = []
+  for (let index = 1; index <= n; index++) {
+    ret.push(<br key={index} />);    
+  }
+  return ret
+}
+
+
+const rutas = (
+  <BrowserRouter>
+    <Route path="/" component={ListarActores} />
+    <Route path="/actor/:id" component={EditarActor} />
+    <Route path="/test2" component={Test2} />
+  </BrowserRouter>
+  
+);
+ReactDOM.render(rutas, document.getElementById("root"));
